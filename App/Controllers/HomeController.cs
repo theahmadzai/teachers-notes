@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,14 @@ namespace App.Controllers
 {
     public class HomeController : Controller
     {
+        Database db = new Database();
+
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var teachers = db.Teachers.ToList();
+
+            return View(teachers);
         }
     }
 }
