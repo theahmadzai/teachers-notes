@@ -1,0 +1,41 @@
+﻿* {
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body {
+    background:#f9f9f9;
+    font-family: Roboto;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items:center;
+}
+
+.logo {
+    padding:2rem;
+}
+
+nav {
+    
+}
+
+    nav a {
+        padding: 0.5rem 1rem;
+        display: inline-block;
+        color: #9d6654;
+        background: #e9dfc7;
+    }
+
+    nav a:hover {
+        color: #e9dfc7;
+        background: #9d6654;
+    }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
