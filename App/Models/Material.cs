@@ -8,13 +8,12 @@ using App.Enums;
 
 namespace App.Models
 {
-    [Table("Material")]
     public class Material
     {
         public int Id { get; set; }
         
         public MaterialType Type { get; set; }
-             
+        
         public Teacher Teacher { get; set; }
 
         [Required]
@@ -23,10 +22,13 @@ namespace App.Models
         public string Title { get; set; }
 
         [Required]
+        [DataType(DataType.Url)]
         public string Url { get; set; }
 
-        public DateTimeOffset CreatedAt { get; set; }
+        [DataType(DataType.DateTime)]
+        public string CreatedAt { get; set; }
 
-        public DateTimeOffset UpdatedAt { get; set; }
+        [DataType(DataType.DateTime)]
+        public string UpdatedAt { get; set; }
     }
 }

@@ -1,0 +1,16 @@
+﻿@{
+
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Label("Email: ")
+    @Html.Editor("email")
+
+    @Html.Label("Password: ")
+    @Html.Editor("password");
+
+    <input type="submit" value="Login" />
+}

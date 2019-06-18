@@ -7,7 +7,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace App.Models
 {
-    [Table("Teacher")]
     public class Teacher
     {
         public int Id { get; set; }
@@ -24,10 +23,13 @@ namespace App.Models
         [Required]
         [MinLength(10)]
         [MaxLength(30)] 
+        [DataType(DataType.Password)]
         public string Password { get; set; }    
        
-        public DateTimeOffset CreatedAt { get; set; }
-        
-        public DateTimeOffset UpdatedAt { get; set; }       
+        [DataType(DataType.DateTime)]
+        public string CreatedAt { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public string UpdatedAt { get; set; }       
     }
 }

@@ -1,66 +1,52 @@
 ﻿@model App.Models.Material
 
 @{
-    Layout = null;
+    ViewBag.Title = "Material Details";
 }
 
-<!DOCTYPE html>
+<h4>Material</h4>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Material</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Type)
-            </dt>
+<dl>
+    <dt>
+        @Html.DisplayNameFor(model => model.Type)
+    </dt>
     
-            <dd>
-                @Html.DisplayFor(model => model.Type)
-            </dd>
+    <dd>
+        @Html.DisplayFor(model => model.Type)
+    </dd>
     
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
+    <dt>
+        @Html.DisplayNameFor(model => model.Title)
+    </dt>
     
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
+    <dd>
+        @Html.DisplayFor(model => model.Title)
+    </dd>
     
-            <dt>
-                @Html.DisplayNameFor(model => model.Url)
-            </dt>
+    <dt>
+        @Html.DisplayNameFor(model => model.Url)
+    </dt>
     
-            <dd>
-                @Html.DisplayFor(model => model.Url)
-            </dd>
+    <dd>
+        @Html.DisplayFor(model => model.Url)
+    </dd>
     
-            <dt>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </dt>
+    <dt>
+        @Html.DisplayNameFor(model => model.CreatedAt)
+    </dt>
     
-            <dd>
-                @Html.DisplayFor(model => model.CreatedAt)
-            </dd>
+    <dd>
+        @Html.DisplayFor(model => model.CreatedAt)
+    </dd>
     
-            <dt>
-                @Html.DisplayNameFor(model => model.UpdatedAt)
-            </dt>
+    <dt>
+        @Html.DisplayNameFor(model => model.UpdatedAt)
+    </dt>
     
-            <dd>
-                @Html.DisplayFor(model => model.UpdatedAt)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+    <dd>
+        @Html.DisplayFor(model => model.UpdatedAt)
+    </dd>
+</dl>
+
+@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+@Html.ActionLink("Back to List", "Index")

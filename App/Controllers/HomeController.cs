@@ -14,9 +14,7 @@ namespace App.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var teachers = db.Teachers.ToList();
-
-            return View(teachers);
+            return View();
         }
     }
 }
