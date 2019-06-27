@@ -5,19 +5,26 @@ namespace App.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<App.Models.Database>
+    internal sealed class Configuration : DbMigrationsConfiguration<App.Models.DbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(App.Models.Database context)
+        protected override void Seed(App.Models.DbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            //context.Users.AddOrUpdate(u => u.Id,
+            //    new App.Models.User
+            //    {
+            //        Id = 1,
+            //        Name = "Tester",
+            //        Email = "Tester@test.com",
+            //        Password = "tester"
+            //    }
+            //);
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            //context.SaveChanges();
         }
     }
 }

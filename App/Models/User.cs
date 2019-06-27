@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace App.Models
 {
-    public class Teacher
+    public class User
     {
         public int Id { get; set; }
 
@@ -24,12 +24,16 @@ namespace App.Models
         [MinLength(10)]
         [MaxLength(30)] 
         [DataType(DataType.Password)]
-        public string Password { get; set; }    
-       
-        [DataType(DataType.DateTime)]
-        public string CreatedAt { get; set; }
+        public string Password { get; set; }
 
+        [Column(TypeName = "datetime2")]
         [DataType(DataType.DateTime)]
-        public string UpdatedAt { get; set; }       
+        public DateTime CreatedAt { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        [DataType(DataType.DateTime)]
+        public DateTime UpdatedAt { get; set; }
+
+        public virtual ICollection<Resource> Resources { get; set; }
     }
 }

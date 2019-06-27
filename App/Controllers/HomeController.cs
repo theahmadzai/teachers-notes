@@ -9,7 +9,7 @@ namespace App.Controllers
 {
     public class HomeController : Controller
     {
-        Database db = new Database();
+        DbContext db = new DbContext();
 
         // GET: Home
         public ActionResult Index()

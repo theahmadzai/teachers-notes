@@ -9,11 +9,11 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            E-Learning Resources
+        <div class="logo">            
+            @Html.ActionLink("E-Learning Resources", "Index", "Home", new { area = "" }, new { @class = "logo-text" })
         </div>
         <nav>
-            @Html.ActionLink("Home", "Home")
+            @Html.ActionLink("Home", "Index", "Home")
             @Html.ActionLink("Login", "Login")
             @Html.ActionLink("Logout", "Home")
         </nav>
@@ -21,6 +21,11 @@
     <div>
         @RenderBody()
     </div>
+    <footer>
+        <div>
+            <p>&copy; @DateTime.Now.Year - Immortal</p>
+        </div>
+    </footer>
     <script src="~/Assets/Scripts/app.js"></script>
 </body>
 </html>

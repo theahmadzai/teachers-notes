@@ -9,7 +9,7 @@ namespace App.Controllers
 {
     public class AccountController : Controller
     {
-        private Database db = new Database();
+        private DbContext db = new DbContext();
 
         // GET: Account
         [HttpGet]
@@ -27,13 +27,13 @@ namespace App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(Teacher teacher)
+        public ActionResult Login(User user)
         {
-            var user = db.Teachers.Single(t => t.Email == teacher.Email && t.Password == teacher.Password);
+            var usr = db.Users.Single(u => u.Email == user.Email && u.Password == user.Password);
 
-            if(user != null) 
+            if(usr != null) 
             {
-                Session.Add("user", user);
+                Session.Add("user", usr);
                 return RedirectToAction("Index");
 
             }

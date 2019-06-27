@@ -8,27 +8,29 @@ using App.Enums;
 
 namespace App.Models
 {
-    public class Material
+    public class Resource
     {
         public int Id { get; set; }
-        
-        public MaterialType Type { get; set; }
-        
-        public Teacher Teacher { get; set; }
+
+        public Subject Subject { get; set; }
 
         [Required]
         [MinLength(5)]
         [MaxLength(50)]
         public string Title { get; set; }
 
-        [Required]
-        [DataType(DataType.Url)]
-        public string Url { get; set; }
-
+        [Column(TypeName = "datetime2")]
         [DataType(DataType.DateTime)]
-        public string CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
+        [Column(TypeName = "datetime2")]
         [DataType(DataType.DateTime)]
-        public string UpdatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+
+        public int UserId { get; set; }
+
+        public virtual User User { get; set; }
+
+        public virtual ICollection<File> Files { get; set; }
     }
 }
